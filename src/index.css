@@ -1,1 +1,50 @@
 @import "tailwindcss";
+
+@theme {
+  /* Primary Brand: Azure Blue */
+  --color-azure-blue-50: #e7f0fe;
+  --color-azure-blue-100: #cee0fd;
+  --color-azure-blue-200: #9ec1fa;
+  --color-azure-blue-300: #6da2f8;
+  --color-azure-blue-400: #3c83f6;
+  --color-azure-blue-500: #0b64f4;
+  --color-azure-blue-600: #0950c3;
+  --color-azure-blue-700: #073c92;
+  --color-azure-blue-800: #052861;
+  --color-azure-blue-900: #021431;
+  --color-azure-blue-950: #020e22;
+
+  /* Structural Neutral: Carbon Black */
+  --color-carbon-black-50: #f1f2f4;
+  --color-carbon-black-100: #e3e6e8;
+  --color-carbon-black-200: #c6ccd2;
+  --color-carbon-black-300: #aab3bb;
+  --color-carbon-black-400: #8e99a4;
+  --color-carbon-black-500: #717f8e;
+  --color-carbon-black-600: #5b6671;
+  --color-carbon-black-700: #444c55;
+  --color-carbon-black-800: #2d3339;
+  --color-carbon-black-900: #17191c;
+  --color-carbon-black-950: #101214;
+
+  /* Base Neutral: Bright Snow */
+  --color-bright-snow-50: #f1f1f3;
+  --color-bright-snow-100: #e4e4e7;
+  --color-bright-snow-200: #c8c8d0;
+  --color-bright-snow-300: #adadb8;
+  --color-bright-snow-400: #9292a0;
+  --color-bright-snow-500: #777788;
+  --color-bright-snow-600: #5f5f6d;
+  --color-bright-snow-700: #474752;
+  --color-bright-snow-800: #2f2f37;
+  --color-bright-snow-900: #18181b;
+  --color-bright-snow-950: #111113;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-carbon-black-900);
+    color: var(--color-bright-snow-50);
+    font-family: "Inter", system-ui, sans-serif;
+  }
+}
