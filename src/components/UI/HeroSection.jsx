@@ -1,5 +1,6 @@
 import React from "react";
-import heroImage from "../assets/heroImage.jpg";
+import heroImage from "../../assets/heroImage.jpg";
+import { Link } from "react-router";
 
 const HeroSection = () => {
   return (
@@ -29,8 +30,8 @@ const HeroSection = () => {
         </div>
 
         {/* Main Title */}
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-white drop-shadow-2xl">
-          Discover the World
+        <h1 className="font-bold tracking-tight mb-6 text-carbon-black-50 drop-shadow-2xl">
+          <span className="text-5xl md:text-7xl"> Discover the World</span>
           <br className="hidden md:block" />
           <span className="text-transparent bg-clip-text bg-linear-to-r from-azure-blue-300 via-white to-azure-blue-300 text-6xl">
             One Place at a Time
@@ -38,7 +39,7 @@ const HeroSection = () => {
         </h1>
 
         {/* Subtitle */}
-        <p className="text-lg md:text-xl text-carbon-black-100 max-w-3xl mx-auto mb-10 leading-relaxed tracking-wider font-light drop-shadow-md">
+        <p className="text-lg text-carbon-black-300 max-w-3xl mx-auto mb-10 leading-relaxed tracking-wider drop-shadow-md">
           Discover countries, continents, and fascinating global facts in a
           simple, interactive way. Perfect for students, curious minds, and
           digital explorers.
@@ -46,19 +47,25 @@ const HeroSection = () => {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <button className="px-8 py-3.5 rounded-xl bg-azure-blue-600 hover:bg-azure-blue-500 text-white font-semibold text-lg transition-all shadow-[0_0_20px_rgba(11,100,244,0.4)] hover:shadow-[0_0_30px_rgba(11,100,244,0.6)] active:scale-95 cursor-pointer border border-transparent">
+          <Link
+            to="/country"
+            className="px-5 py-2.5 rounded-xl bg-azure-blue-600 hover:bg-azure-blue-500 text-carbon-black-50 font-semibold text-lg transition-all shadow-xl hover:shadow-[0_0_30px_rgba(11,100,244,0.6)] active:scale-95 cursor-pointer border border-transparent"
+          >
             Explore Countries
-          </button>
-          <button className="px-8 py-3.5 rounded-xl bg-carbon-black-900/60 hover:bg-carbon-black-800/80 border border-carbon-black-400 backdrop-blur-sm text-white font-medium text-lg transition-all hover:border-white active:scale-95 cursor-pointer">
-            Discover Continents
-          </button>
+          </Link>
+          <Link
+            to="/worldfacts"
+            className="px-5 py-2.5 rounded-xl bg-carbon-black-900/60 hover:bg-carbon-black-800/80 border border-carbon-black-400 backdrop-blur-sm text-carbon-black-50 font-medium text-lg transition-all hover:border-white active:scale-95 cursor-pointer"
+          >
+            World Facts
+          </Link>
         </div>
       </div>
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce z-20">
         <svg
-          className="w-6 h-6 text-white/70"
+          className="w-6 h-6 text-carbon-black-50"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"

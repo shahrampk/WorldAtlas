@@ -73,34 +73,16 @@ const Header = () => {
               key={link.name}
               to={link.path}
               className={({ isActive }) =>
-                `px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+                `px-4 py-2 rounded-lg text-sm font-medium tracking-wider transition-all duration-300 ${
                   isActive
                     ? "text-azure-blue-400 bg-azure-blue-900/30"
-                    : "text-carbon-black-200 hover:text-white hover:bg-carbon-black-800/50"
+                    : "text-carbon-black-200 hover:text-carbon-black-100 hover:bg-carbon-black-800/50"
                 }`
               }
             >
               {link.name}
             </NavLink>
           ))}
-
-          {/* GitHub / External Link Icon (Optional decorator) */}
-          <div className="w-px h-6 bg-carbon-black-700 mx-2"></div>
-          <button className="p-2 rounded-full text-carbon-black-300 hover:text-white hover:bg-carbon-black-800 transition-colors cursor-pointer">
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-              ></path>
-            </svg>
-          </button>
         </nav>
 
         {/* Mobile Menu Button (Placeholder) */}
