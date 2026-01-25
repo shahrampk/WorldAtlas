@@ -1,6 +1,7 @@
 import React from "react";
 import heroImage from "../../assets/heroImage.jpg";
 import { Link } from "react-router";
+import Heading from "../Heading";
 
 const HeroSection = () => {
   return (
@@ -31,15 +32,15 @@ const HeroSection = () => {
 
         {/* Main Title */}
         <h1 className="font-bold tracking-tight mb-6 text-carbon-black-50 drop-shadow-2xl">
-          <span className="text-5xl md:text-7xl"> Discover the World</span>
+          <span className="text-4xl md:text-7xl"> Discover the World</span>
           <br />
-          <span className="text-transparent bg-clip-text bg-linear-to-r from-azure-blue-300 via-white to-azure-blue-300 text-4xl md:text-6xl">
+          <span className="text-transparent bg-clip-text bg-linear-to-r from-azure-blue-300 via-white to-azure-blue-300 text-3xl md:text-6xl">
             One Place at a Time
           </span>
         </h1>
 
         {/* Subtitle */}
-        <p className="text-sm md:text-lg text-carbon-black-300 max-w-3xl mx-auto mb-10 leading-relaxed tracking-wider drop-shadow-md">
+        <p className="md:text-sm 3xl:text-lg text-carbon-black-300 max-w-3xl mx-auto mb-10 leading-relaxed tracking-wider drop-shadow-md">
           Discover countries, continents, and fascinating global facts in a
           simple, interactive way. Perfect for students, curious minds, and
           digital explorers.

@@ -6,10 +6,10 @@ import TajMahal from "../assets/monuments/TajMahal.png";
 export const slides = [
   {
     id: 1,
-    name: "Pyramids of Giza",
+    name: "Taj Mahal",
     description:
-      "Situated in Giza, Egypt, the Pyramids of Giza were built around 2600 BC as royal tombs for pharaohs. Made from millions of stone blocks, they reflect advanced engineering skills and deep religious beliefs about the afterlife.",
-    imageUrl: Pyramid,
+      "Located in Agra, India, the Taj Mahal was completed in 1653 AD and built by Mughal emperor Shah Jahan as a white marble mausoleum. Its perfect symmetry and design reflect artistic excellence and rich cultural heritage.",
+    imageUrl: TajMahal,
   },
   {
     id: 2,
@@ -34,9 +34,9 @@ export const slides = [
   },
   {
     id: 5,
-    name: "Taj Mahal",
+    name: "Pyramids of Giza",
     description:
-      "Located in Agra, India, the Taj Mahal was completed in 1653 AD and built by Mughal emperor Shah Jahan as a white marble mausoleum. Its perfect symmetry and design reflect artistic excellence and rich cultural heritage.",
-    imageUrl: TajMahal,
+      "Situated in Giza, Egypt, the Pyramids of Giza were built around 2600 BC as royal tombs for pharaohs. Made from millions of stone blocks, they reflect advanced engineering skills and deep religious beliefs about the afterlife.",
+    imageUrl: Pyramid,
   },
 ];

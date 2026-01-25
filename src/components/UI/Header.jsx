@@ -73,7 +73,7 @@ const Header = () => {
               key={link.name}
               to={link.path}
               className={({ isActive }) =>
-                `px-4 py-2 rounded-lg text-sm font-medium tracking-wider transition-all duration-300 ${
+                `px-4 py-2 rounded-lg text-sm md:text-base 3xl:text-xl font-medium tracking-wider transition-all duration-300 ${
                   isActive
                     ? "text-azure-blue-400 bg-azure-blue-900/30"
                     : "text-carbon-black-200 hover:text-carbon-black-100 hover:bg-carbon-black-800/50"

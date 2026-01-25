@@ -39,6 +39,8 @@
   --color-bright-snow-800: #2f2f37;
   --color-bright-snow-900: #18181b;
   --color-bright-snow-950: #111113;
+
+  --breakpoint-3xl: 1920px;
 }
 
 @layer base {
