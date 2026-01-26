@@ -1,9 +1,10 @@
 import React from "react";
-import HeroSection from "../components/UI/HeroSection";
-import HowItWorks from "../components/UI/HowItWorks";
-import Monuments from "../components/UI/Monuments";
-import FAQsSection from "../components/UI/FAQsSection";
-
+import {
+  HeroSection,
+  HowItWorks,
+  Monuments,
+  FAQsSection,
+} from "../components/UI/HomePageUI/homePageUI";
 function Home() {
   return (
     <div>

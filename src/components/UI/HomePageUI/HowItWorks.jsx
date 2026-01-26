@@ -1,6 +1,6 @@
 import React from "react";
-import Heading from "../../Heading";
 import { steps } from "../../../data/HowItWorks";
+import Heading from "./Heading";
 
 const HowItWorks = () => {
   return (
