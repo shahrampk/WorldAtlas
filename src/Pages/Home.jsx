@@ -1,8 +1,8 @@
 import React from "react";
 import HeroSection from "../components/UI/HeroSection";
-import AboutSections from "../components/UI/AboutSections";
 import HowItWorks from "../components/UI/HowItWorks";
 import Monuments from "../components/UI/Monuments";
+import FAQsSection from "../components/UI/FAQsSection";
 
 function Home() {
   return (
@@ -11,6 +11,7 @@ function Home() {
         <HeroSection />
         <HowItWorks />
         <Monuments />
+        <FAQsSection />
       </div>
     </div>
   );

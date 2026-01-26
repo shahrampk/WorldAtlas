@@ -1,6 +1,6 @@
 import React from "react";
-import Heading from "../Heading";
-import { steps } from "../../data/HowItWorks";
+import Heading from "../../Heading";
+import { steps } from "../../../data/HowItWorks";
 
 const HowItWorks = () => {
   return (
@@ -18,19 +18,23 @@ const HowItWorks = () => {
                 <div
                   className={`flex justify-center ${isEven ? "md:col-start-2" : ""}`}
                 >
-                  <img src={step.image} alt="image" className="w-100" />
+                  <img
+                    src={step.image}
+                    alt="image"
+                    className="w-100 brightness-80"
+                  />
                 </div>
                 <div
                   className={`flex flex-col gap-6 ${isEven ? "col-start-1 row-start-1" : ""}`}
                 >
-                  <p className="text-6xl md:text-9xl text-carbon-black-600 font-bold tracking-wide">
+                  <p className="text-6xl md:text-9xl text-bright-snow-700 font-bold tracking-wide">
                     {step.number}
                   </p>
                   <div>
-                    <h3 className="text-3xl 3xl:text-4xl font-bold text-carbon-black-100 mb-4">
+                    <h3 className="text-3xl 3xl:text-4xl font-bold text-bright-snow-200 mb-4">
                       {step.title}
                     </h3>
-                    <p className="text-carbon-black-200 tracking-wide leading-relaxed md:text-lg 3xl:text-xl">
+                    <p className="text-bright-snow-300 tracking-wide leading-relaxed md:text-lg 3xl:text-xl">
                       {step.description}
                     </p>
                   </div>

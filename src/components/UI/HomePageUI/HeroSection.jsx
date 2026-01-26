@@ -1,7 +1,7 @@
 import React from "react";
 import heroImage from "../../assets/heroImage.jpg";
 import { Link } from "react-router";
-import Heading from "../Heading";
+import Heading from "../../Heading";
 
 const HeroSection = () => {
   return (
