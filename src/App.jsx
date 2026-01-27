@@ -1,5 +1,6 @@
 import { Outlet } from "react-router";
 import Header from "./components/UI/Header";
+import Footer from "./components/UI/Footer";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <main className="grow pb-10">
         <Outlet />
       </main>
+      <Footer />
     </div>
   );
 }

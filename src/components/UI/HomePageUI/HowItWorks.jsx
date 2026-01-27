@@ -4,7 +4,7 @@ import Heading from "./Heading";
 
 const HowItWorks = () => {
   return (
-    <section>
+    <section id="how-it-works">
       <div className="max-w-6xl 3xl:max-w-[1400px] mx-auto px-6 flex flex-col gap-7 md:gap-28">
         <Heading title="How to Get Information" subtitle="From WorldAtlas" />
         <div className="flex flex-col gap-20">

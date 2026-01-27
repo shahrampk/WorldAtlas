@@ -22,7 +22,7 @@ function Slider() {
       <div className="relative max-w-6xl  mx-auto flex w-full overflow-hidden py-10 px-5">
         <button
           onClick={prevSlide}
-          className="absolute z-50 left-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-carbon-black-800 hover:bg-azure-blue-600 border border-carbon-black-700 rounded-full flex items-center justify-center cursor-pointer shadow-lg transition-all duration-300 hover:scale-110 active:scale-95"
+          className="absolute z-10 left-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-carbon-black-800 hover:bg-azure-blue-600 border border-carbon-black-700 rounded-full flex items-center justify-center cursor-pointer shadow-lg transition-all duration-300 hover:scale-110 active:scale-95"
         >
           <ChevronLeft />
         </button>
@@ -65,7 +65,7 @@ function Slider() {
         </div>
         <button
           onClick={nextSlide}
-          className="absolute z-50 right-0 top-1/2 -translate-y-1/2 -translate-x-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-carbon-black-800 hover:bg-azure-blue-600 border border-carbon-black-700 rounded-full flex items-center justify-center cursor-pointer shadow-lg transition-all duration-300 hover:scale-110 active:scale-95"
+          className="absolute z-10 right-0 top-1/2 -translate-y-1/2 -translate-x-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-carbon-black-800 hover:bg-azure-blue-600 border border-carbon-black-700 rounded-full flex items-center justify-center cursor-pointer shadow-lg transition-all duration-300 hover:scale-110 active:scale-95"
         >
           <ChevronRight />
         </button>

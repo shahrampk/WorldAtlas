@@ -13,7 +13,7 @@ const HeroSection = () => {
           className="w-full h-full object-cover"
         />
         {/* Dark Gradient Overlay for readability */}
-        <div className="absolute inset-0 bg-linear-to-b from-carbon-black-900/30 via-carbon-black-900/70 to-carbon-black-900 z-10"></div>
+        <div className="absolute inset-0 bg-linear-to-b from-carbon-black-900/20 via-carbon-black-900/60 to-carbon-black-900 z-10"></div>
       </div>
 
       {/* Content Container */}
