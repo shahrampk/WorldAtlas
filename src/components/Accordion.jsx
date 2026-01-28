@@ -23,19 +23,23 @@ function Accordion() {
     return () => el.removeEventListener("click", handleClick);
   }, []);
   return (
-    <div ref={parent} className="accordion flex flex-col gap-8">
+    <div ref={parent} className="accordion flex flex-col gap-4 md:gap-8">
       {faqs.map((faq) => (
         <div
           key={faq.questionNo}
-          className="faq bg-carbon-black-800 cursor-pointer rounded-2xl overflow-hidden [&.active_.answer]:grid-rows-[1fr] [&.active_.answer]:opacity-100 [&.active_.question]:bg-carbon-black-700/70 [&.active_.answer]:p-6 [&.active_.toggle-btn]:rotate-45 select-none"
+          className="faq group glass-card cursor-pointer rounded-2xl overflow-hidden [&.active_.answer]:grid-rows-[1fr] [&.active_.answer]:opacity-100 [&.active_.question]:bg-white/5 [&.active_.answer]:p-8 [&.active_.toggle-btn]:rotate-45 [&.active]:border-azure-blue-500/50 [&.active]:shadow-azure-blue-500/10 select-none transition-all duration-300"
         >
           {/* Header */}
-          <div className="question flex items-center justify-between p-6  hover:bg-carbon-black-700/70 transition-colors duration-200">
-            <h3 className="text-xl font-semibold text-bright-snow-200">
-              {faq.questionNo}. {faq.question}
+          <div className="question flex items-center justify-between p-4 md:p-6 hover:bg-bright-snow-50/5 transition-colors duration-200">
+            <h3 className="text-base md:text-xl font-semibold text-bright-snow-100 pr-2
+             md:pr-8">
+              {/* <span className="text-azure-blue-500 mr-2">
+                {faq.questionNo}.
+              </span>{" "} */}
+              {faq.question}
             </h3>
-            <button className="toggle-btn transition-transform duration-300 cursor-pointer">
-              <Plus strokeWidth={3} className="w-6 h-6 text-bright-snow-400" />
+            <button className="toggle-btn p-2 rounded-full bg-white/5 flex items-center justify-center transition-all duration-300 cursor-pointer group-hover:scale-110">
+              <Plus strokeWidth={2.5} className="w-5 h-5 md:w-6 md:h-6 text-azure-blue-400" />
             </button>
           </div>
           {/* Answer */}

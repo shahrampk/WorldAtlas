@@ -27,14 +27,14 @@ const HowItWorks = () => {
                 <div
                   className={`flex flex-col gap-6 ${isEven ? "col-start-1 row-start-1" : ""}`}
                 >
-                  <p className="text-6xl md:text-9xl text-bright-snow-700 font-bold tracking-wide">
+                  <p className="text-7xl md:text-9xl font-black tracking-tighter text-transparent bg-clip-text bg-linear-to-b from-white/10 to-transparent select-none">
                     {step.number}
                   </p>
-                  <div>
-                    <h3 className="text-3xl 3xl:text-4xl font-bold text-bright-snow-200 mb-4">
+                  <div className="relative -mt-10 md:-mt-16 z-10 pl-4 md:pl-8">
+                    <h3 className="text-3xl 3xl:text-5xl font-bold text-bright-snow-100 mb-4 tracking-tight">
                       {step.title}
                     </h3>
-                    <p className="text-bright-snow-300 tracking-wide leading-relaxed md:text-lg 3xl:text-xl">
+                    <p className="text-bright-snow-300 tracking-wide leading-relaxed 3xl:text-lg">
                       {step.description}
                     </p>
                   </div>

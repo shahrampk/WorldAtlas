@@ -1,7 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import "tailwindcss";
 
 @theme {
+  /* Font Family - In v4, this automatically creates the font-poppins class */
+  --font-poppins: "Poppins", "system-ui", "sans-serif";
+
   /* Primary Brand: Azure Blue */
   --color-azure-blue-50: #e7f0fe;
   --color-azure-blue-100: #cee0fd;
@@ -41,13 +43,21 @@
   --color-bright-snow-900: #18181b;
   --color-bright-snow-950: #111113;
 
-  --breakpoint-3xl: 1920px;
+  /* Modern Breakpoint */
+  --breakpoint-3xl: 120rem; /* 1920px */
 }
 
+/* Base Styles */
 @layer base {
   body {
-    background-color: var(--color-carbon-black-900);
-    color: var(--color-bright-snow-50);
-    font-family: "Rubik", system-ui, sans-serif;
+    @apply bg-carbon-black-950 text-bright-snow-50 antialiased;
+    font-family: var(--font-poppins);
+  }
+}
+
+/* Custom Components & Utilities */
+@layer components {
+  .glass-card {
+    @apply bg-carbon-black-900/40 backdrop-blur-xl border border-carbon-black-700/50 shadow-2xl;
   }
 }

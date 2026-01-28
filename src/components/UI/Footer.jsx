@@ -1,6 +1,6 @@
 import React from "react";
 import Logo from "../logo";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import {
   MapPin,
   Mail,
@@ -44,44 +44,43 @@ function Footer() {
 
   const exploreLinks = [
     { name: "How It Works", path: "/#how-it-works" },
-    { name: "Popular Monuments", path: "/#monuments" },
+    { name: "Monuments", path: "/#monuments" },
     { name: "FAQs", path: "/#faqs-section" },
-    // { name: "Contact Us", path: "/#contact-us" },
   ];
 
   return (
     <footer className="bg-carbon-black-950 border-t border-carbon-black-800/50 pt-20 pb-10">
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-12 md:gap-5 mb-20">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-12 gap-12 md:gap-8 mb-20">
         {/* Brand Section */}
-        <div className="flex flex-col col-span-2 gap-8">
+        <div className="flex flex-col sm:col-span-2 lg:col-span-4 lg:col-start-1 row-start-1 gap-8 ">
           <Logo />
           <p className="text-carbon-black-400 text-sm sm:text-base leading-relaxed">
             Transforming the way you explore the world with innovative digital
-            solutions since 2010. We help you discover global insights
+            solutions since 2025. We help you discover global insights
             efficiently.
           </p>
           <div className="flex gap-5">
             <a
               href="#"
-              className="p-2 text-carbon-black-400 hover:text-azure-blue-400 transition-colors"
+              className="p-2 text-carbon-black-400 hover:text-azure-blue-400 hover:bg-bright-snow-100/5 hover:-translate-y-1 rounded-full transition-all"
             >
               <Facebook size={20} />
             </a>
             <a
               href="#"
-              className="p-2 text-carbon-black-400 hover:text-azure-blue-400 transition-colors"
+              className="p-2 text-carbon-black-400 hover:text-azure-blue-400 hover:bg-bright-snow-100/5 hover:-translate-y-1 rounded-full transition-all"
             >
               <Twitter size={20} />
             </a>
             <a
               href="#"
-              className="p-2 text-carbon-black-400 hover:text-azure-blue-400 transition-colors"
+              className="p-2 text-carbon-black-400 hover:text-azure-blue-400 hover:bg-bright-snow-100/5 hover:-translate-y-1 rounded-full transition-all"
             >
               <Linkedin size={20} />
             </a>
             <a
               href="#"
-              className="p-2 text-carbon-black-400 hover:text-azure-blue-400 transition-colors"
+              className="p-2 text-carbon-black-400 hover:text-azure-blue-400 hover:bg-bright-snow-100/5 hover:-translate-y-1 rounded-full transition-all"
             >
               <Instagram size={20} />
             </a>
@@ -89,17 +88,17 @@ function Footer() {
         </div>
 
         {/* Quicklinks */}
-        <div className="col-start-1 lg:col-span-1">
+        <div className="md:row-start-2 lg:row-start-1 lg:col-span-2 lg:col-start-6 ">
           <FooterLinkGroup title="Quick Links" links={QuickLinks} />
         </div>
 
-        {/* Explorer (Our Services style) */}
-        <div className="lg:col-span-1">
+        {/* Explorer */}
+        <div className="md:row-start-2 lg:row-start-1 lg:col-span-2 lg:col-start-8">
           <FooterLinkGroup title="Explorer" links={exploreLinks} />
         </div>
 
         {/* Contact Us Section */}
-        <div className="flex flex-col col-span-2 sm:col-span-1 lg:col-span-2 gap-8">
+        <div className="md:row-start-2 lg:row-start-1 lg:col-span-3 lg:col-start-10 flex flex-col gap-6">
           <h3 className="font-bold text-bright-snow-100 text-lg tracking-tight">
             Contact Us
           </h3>
@@ -107,7 +106,7 @@ function Footer() {
             <li className="flex gap-4 items-start text-carbon-black-300">
               <MapPin className="text-azure-blue-400 shrink-0 mt-1" size={18} />
               <span className="text-sm md:text-base">
-                123 World Avenue, Globe Center, NY 10001
+                123 World Avenue, Globe Center
               </span>
             </li>
             <li className="flex gap-4 items-center text-carbon-black-300">
@@ -128,34 +127,8 @@ function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="max-w-7xl mx-auto px-6 pt-10 border-t border-carbon-black-800/30 flex flex-col md:flex-row justify-between items-center gap-6 text-xs md:text-sm text-carbon-black-500 font-medium">
+      <div className="max-w-7xl mx-auto px-6 pt-10 border-t border-carbon-black-800/30 text-xs md:text-sm text-carbon-black-500 font-medium text-center">
         <p>© {new Date().getFullYear()} WorldAtlas. All rights reserved.</p>
-        <div className="flex flex-wrap justify-center gap-6 md:gap-8">
-          <Link
-            to="/terms"
-            className="hover:text-azure-blue-400 transition-colors"
-          >
-            Terms of Service
-          </Link>
-          <Link
-            to="/privacy"
-            className="hover:text-azure-blue-400 transition-colors"
-          >
-            Privacy Policy
-          </Link>
-          <Link
-            to="/cookies"
-            className="hover:text-azure-blue-400 transition-colors"
-          >
-            Cookie Policy
-          </Link>
-          <Link
-            to="/sitemap"
-            className="hover:text-azure-blue-400 transition-colors"
-          >
-            Sitemap
-          </Link>
-        </div>
       </div>
     </footer>
   );

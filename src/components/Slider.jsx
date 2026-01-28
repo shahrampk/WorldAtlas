@@ -19,55 +19,60 @@ function Slider() {
   return (
     <div>
       {/* Slider Track */}
-      <div className="relative max-w-6xl  mx-auto flex w-full overflow-hidden py-10 px-5">
+      <div className="relative max-w-6xl mx-auto flex w-full overflow-hidden py-10 px-5 group">
         <button
           onClick={prevSlide}
-          className="absolute z-10 left-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-carbon-black-800 hover:bg-azure-blue-600 border border-carbon-black-700 rounded-full flex items-center justify-center cursor-pointer shadow-lg transition-all duration-300 hover:scale-110 active:scale-95"
+          className="absolute z-20 left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-carbon-black-900/40 hover:bg-azure-blue-600 backdrop-blur-md border border-white/10 rounded-full flex items-center justify-center cursor-pointer shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 opacity-0 group-hover:opacity-100"
         >
-          <ChevronLeft />
+          <ChevronLeft className="text-white w-6 h-6" />
         </button>
         {slides.map((slide) => (
           <div
             key={slide.id}
-            className="min-w-full transition-transform duration-700 ease-in-out rounded-3xl px-5 "
+            className="min-w-full transition-transform duration-700 ease-in-out px-4"
             style={{ transform: `translateX(-${currentSlide * 100}%)` }}
           >
-            <div className="flex flex-col md:flex-row items-center gap-6 lg:gap-10 rounded-3xl p-3 md:px-10 md:py-5 bg-carbon-black-800 h-full">
-              <div className="w-full md:w-80 h-80 p-5 bg-carbon-black-950 md:shadow-xl rounded-2xl">
+            <div className="flex flex-col md:flex-row items-center gap-10 rounded-3xl p-6 md:p-10 glass-card h-full">
+              <div className="w-full md:w-80 h-80 shrink-0 relative overflow-hidden rounded-2xl ">
                 <img
                   src={slide.imageUrl}
                   alt={slide.name}
-                  className="object-cover bg-center rounded-xl w-full h-full"
+                  className="object-cover w-full h-full transition-transform duration-500"
                 />
+                <div className="absolute inset-0 bg-linear-to-t from-carbon-black-950/60 to-transparent"></div>
               </div>
-              <div className="flex-1 ">
-                <h3 className="text-xl sm:text-xl lg:text-3xl font-bold text-bright-snow-50 mb-4 leading-tight">
+
+              <div className="flex-1">
+                <h3 className="text-3xl lg:text-4xl font-bold text-carbon-black-50 mb-6 leading-tight tracking-tight">
                   {slide.name}
                 </h3>
-
-                <p className="3xl:text-lg leading-relaxed tracking-wider text-bright-snow-200 mb-6">
+                <p className="text-lg leading-relaxed text-carbon-black-300 mb-8 max-w-xl">
                   {slide.description}
                 </p>
               </div>
             </div>
           </div>
         ))}
-        <div className="flex justify-center gap-2 absolute z-50 bottom-3 right-1/2 translate-x-1/2">
-          {slides.map((slide) => (
+
+        <div className="flex justify-center gap-3 absolute z-20 bottom-0 left-1/2 -translate-x-1/2">
+          {slides.map((_, index) => (
             <button
-              key={slide.id}
-              onClick={() => goToSlide(slide.id - 1)}
-              className={`w-3 h-3 ${slide.id === currentSlide + 1 ? "bg-bright-snow-100 scale-120" : "bg-bright-snow-500 scale-95"} hover:bg-bright-snow-300 rounded-full flex items-center justify-center cursor-pointer shadow-lg transition-all duration-300`}
-            >
-              <span className="text-carbon-black-800"></span>
-            </button>
+              key={index}
+              onClick={() => goToSlide(index)}
+              className={`h-2 transition-all duration-500 rounded-full cursor-pointer ${
+                index === currentSlide
+                  ? "w-8 bg-azure-blue-500"
+                  : "w-2 bg-bright-snow-500/30 hover:bg-bright-snow-500/50"
+              }`}
+            />
           ))}
         </div>
+
         <button
           onClick={nextSlide}
-          className="absolute z-10 right-0 top-1/2 -translate-y-1/2 -translate-x-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-carbon-black-800 hover:bg-azure-blue-600 border border-carbon-black-700 rounded-full flex items-center justify-center cursor-pointer shadow-lg transition-all duration-300 hover:scale-110 active:scale-95"
+          className="absolute z-20 right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-carbon-black-900/40 hover:bg-azure-blue-600 backdrop-blur-md border border-white/10 rounded-full flex items-center justify-center cursor-pointer shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 opacity-0 group-hover:opacity-100"
         >
-          <ChevronRight />
+          <ChevronRight className="text-white w-6 h-6" />
         </button>
       </div>
     </div>

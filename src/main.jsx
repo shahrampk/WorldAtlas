@@ -1,8 +1,14 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider,
+} from "react-router-dom";
+
 import App from "./App.jsx";
-import { createBrowserRouter, RouterProvider } from "react-router";
 import {
   About,
   Continent,
@@ -11,39 +17,22 @@ import {
   Home,
   WorldFacts,
 } from "./Pages";
-const router = createBrowserRouter([
-  {
-    path: "",
-    element: <App />,
-    errorElement: <ErrorPage />,
-    children: [
-      {
-        path: "/",
-        element: <Home />,
-      },
-      {
-        path: "about",
-        element: <About />,
-      },
-      {
-        path: "country",
-        element: <Countries />,
-      },
-      {
-        path: "continent",
-        element: <Continent />,
-      },
-      {
-        path: "worldfacts",
-        element: <WorldFacts />,
-      },
-    ],
-  },
-]);
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<App />}>
+      <Route index element={<Home />} />
+      <Route path="about" element={<About />} />
+      <Route path="country" element={<Countries />} />
+      <Route path="continent" element={<Continent />} />
+      <Route path="worldfacts" element={<WorldFacts />} />
+      <Route path="*" element={<ErrorPage />} />
+    </Route>,
+  ),
+);
+
 createRoot(document.getElementById("root")).render(
-  <RouterProvider router={router}>
-    <StrictMode>
-      <App />
-    </StrictMode>
-  </RouterProvider>,
+  <StrictMode>
+    <RouterProvider router={router} />
+  </StrictMode>,
 );

@@ -99,7 +99,7 @@ function About() {
             An interactive map allows users to visually select continents,
             making exploration intuitive. The page begins with an introduction
             explaining what a continent is and how today’s continents emerged
-            from the ancient supercontinent <Highlight>Pangea</Highlight>.
+            from the ancient supercontinent <Highlight>Pangaea</Highlight>.
           </p>
           <p>
             Users can compare continents through statistical rankings based on
@@ -178,54 +178,6 @@ function About() {
             Each fact connects back to related countries and continents,
             reinforcing contextual learning.
           </p>
-        </ContentBlock>
-
-        <ContentBlock title="External Research & References">
-          <p>
-            Our data is cross-referenced with leading geographical and
-            statistical institutions to ensure accuracy. For those diving
-            deeper, we recommend the following resources:
-          </p>
-          <ul className="list-decimal list-inside pl-4 flex flex-col gap-4">
-            <li>
-              {/* <div> */}
-              <span className="text-bright-snow-100 font-medium italic text-lg">
-                Geological Origins:
-              </span>
-              <p>
-                Research on Plate Tectonics and Pangea -
-                <ExternalLink href="https://en.wikipedia.org/wiki/National_Geographic_Society">
-                  {" "}
-                  National Geographic Society
-                </ExternalLink>
-              </p>
-              {/* </div> */}
-            </li>
-            <li>
-              <span className="text-bright-snow-100 font-medium italic text-lg">
-                Global Demographics:
-              </span>
-              <p>
-                World Population Prospects & Trends -
-                <ExternalLink href="https://en.wikipedia.org/wiki/United_Nations">
-                  {" "}
-                  United Nations (DESA)
-                </ExternalLink>
-              </p>
-            </li>
-            <li>
-              <span className="text-bright-snow-100 font-medium italic text-lg mb-2">
-                Economic & Social Data:
-              </span>
-              <p>
-                Country Intelligence and Economic Indicators -
-                <ExternalLink href="https://en.wikipedia.org/wiki/Central_Intelligence_Agency">
-                  {" "}
-                  CIA World Fact book
-                </ExternalLink>
-              </p>
-            </li>
-          </ul>
         </ContentBlock>
 
         <ContentBlock title="How Everything Connects">
