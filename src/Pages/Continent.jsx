@@ -10,6 +10,8 @@ import {
 import { continentExtremes } from "../data/ContinentData";
 import Map from "../components/UI/Map";
 import Heading from "../components/Heading";
+import Loader from "../components/Loader";
+import Error from "../components/Error";
 
 const Continent = () => {
   const [loading, setLoading] = useState(true);
@@ -22,7 +24,6 @@ const Continent = () => {
       try {
         setLoading(true);
         const countries = await getCountries();
-        console.log(countries);
         // Aggregate data by continent
         const aggregated = countries.reduce((acc, country) => {
           const continent = country.continents?.[0] || "Other";
@@ -76,37 +77,6 @@ const Continent = () => {
     fetchData();
   }, []);
 
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-carbon-black-950">
-        <div className="flex flex-col items-center gap-4">
-          <div className="w-12 h-12 border-4 border-azure-blue-500 border-t-transparent rounded-full animate-spin"></div>
-          <p className="text-bright-snow-300 font-medium">
-            Loading World Data...
-          </p>
-        </div>
-      </div>
-    );
-  }
-
-  if (error) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-carbon-black-950 px-6">
-        <div className="max-w-md p-8 bg-carbon-black-900 rounded-3xl border border-red-500/30 text-center">
-          <div className="text-4xl mb-4">⚠️</div>
-          <h2 className="text-2xl font-bold text-bright-snow-50 mb-4">Error</h2>
-          <p className="text-bright-snow-300 mb-8">{error}</p>
-          <button
-            onClick={() => window.location.reload()}
-            className="px-8 py-3 bg-azure-blue-600 text-bright-snow-50 rounded-xl font-bold hover:bg-azure-blue-500 transition-all"
-          >
-            Retry Connection
-          </button>
-        </div>
-      </div>
-    );
-  }
-
   return (
     <div>
       <ContinentHero />
@@ -120,7 +90,7 @@ const Continent = () => {
               Live data from around the globe. These statistics are aggregated
               from 250+ countries and territories across seven major regions.
             </p>
-            <StatTable data={stats} />
+            <StatTable data={stats} states={{ loading, error }} />
           </div>
         </section>
 
@@ -133,14 +103,23 @@ const Continent = () => {
         </section>
 
         {/* 6. Tabs/Sidebar + Content Area */}
-        <section>
+        <section id="regions-details">
           <Heading title="Detailed Exploration" />
-          <ContinentDetail continentData={continentData} />
+          {loading ? (
+            <Loader />
+          ) : error ? (
+            <Error />
+          ) : (
+            <ContinentDetail
+              continentData={continentData}
+              states={{ loading, error }}
+            />
+          )}
         </section>
 
         {/* Extra: Fun Facts & Navigation */}
         <section>
-          <Heading title="🌟 Global Trivia" />
+          <Heading title="Global Facts" />
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <FunFact
               icon="❄️"

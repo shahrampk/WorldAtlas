@@ -69,7 +69,7 @@ const Map = () => {
         .on("mouseleave", function () {
           d3.select(this).attr("stroke", "#000");
         })
-        .on("click", (e, d) => {
+        .on("click", (_, d) => {
           setSelectedCountry(d.properties);
         });
     };
@@ -105,7 +105,7 @@ const Map = () => {
           </p>
 
           <button
-            className="mt-3 w-full bg-blue-500 hover:bg-blue-600 rounded-lg py-1 font-semibold"
+            className="mt-3 w-full bg-blue-500 hover:bg-blue-600 rounded-lg py-1 font-semibold cursor-pointer"
             onClick={() => setSelectedCountry(null)}
           >
             Close

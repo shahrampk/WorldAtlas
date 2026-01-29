@@ -1,13 +1,28 @@
 import { Map } from "lucide-react";
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
+import Loader from "../../Loader";
+import Error from "../../Error";
 
-const ContinentDetail = ({ continentData }) => {
+const ContinentDetail = ({ continentData, states }) => {
   const [activeContinent, setActiveContinent] = useState(
     Object.keys(continentData)[0] || "Asia",
   );
+  const [countriesShowed, setCountriesShowed] = useState(15);
+  const [showMore, setShowMore] = useState(false);
   const data = continentData[activeContinent];
 
   if (!data) return null;
+
+  useEffect(() => {
+    if (showMore) setCountriesShowed(data.countries.length);
+    else setCountriesShowed(15);
+  }, [showMore]);
+  useEffect(() => {
+    if (showMore) {
+      setShowMore(false);
+      setCountriesShowed(15);
+    }
+  }, [activeContinent]);
 
   return (
     <div className="flex flex-col md:flex-row gap-8 min-h-[500px] bg-carbon-black-900/30 rounded-3xl border border-carbon-black-800 p-6 md:p-8">
@@ -69,18 +84,23 @@ const ContinentDetail = ({ continentData }) => {
                   Countries in this Continent
                 </span>
                 <div className="flex flex-wrap gap-2">
-                  {data.countries.slice(0, 15).map((country) => (
-                    <span
+                  {data.countries.slice(0, countriesShowed).map((country) => (
+                    <button
                       key={country}
-                      className="px-3 py-1 rounded-full bg-carbon-black-800 text-bright-snow-300 text-sm border border-carbon-black-700"
+                      className="px-3 py-1 rounded-full bg-carbon-black-800 text-bright-snow-300 text-sm border border-carbon-black-700 hover:bg-blue-800 hover:text-bright-snow-50 cursor-pointer transition-colors duration-200"
                     >
                       {country}
-                    </span>
+                    </button>
                   ))}
                   {data.countries.length > 15 && (
-                    <span className="text-azure-blue-400 text-sm font-medium self-center">
-                      + {data.countries.length - 15} more
-                    </span>
+                    <button
+                      onClick={() => setShowMore((prev) => !prev)}
+                      className="text-azure-blue-400 text-sm font-medium self-center cursor-pointer "
+                    >
+                      {!showMore
+                        ? `+ ${data.countries.length - countriesShowed} more`
+                        : "- show less"}
+                    </button>
                   )}
                 </div>
               </div>

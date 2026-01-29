@@ -44,17 +44,18 @@ function Footer() {
 
   const exploreLinks = [
     { name: "How It Works", path: "/#how-it-works" },
+    { name: "Regions", path: "/region#regions-details" },
     { name: "Monuments", path: "/#monuments" },
     { name: "FAQs", path: "/#faqs-section" },
   ];
 
   return (
     <footer className="bg-carbon-black-950 border-t border-carbon-black-800/50 pt-20 pb-10">
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-12 gap-12 md:gap-8 mb-20">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-12 md:gap-8 mb-20">
         {/* Brand Section */}
-        <div className="flex flex-col sm:col-span-2 lg:col-span-4 lg:col-start-1 row-start-1 gap-8 ">
+        <div className="flex flex-col sm:col-span-2 lg:col-span-4 lg:col-start-1 row-start-1 gap-8">
           <Logo />
-          <p className="text-carbon-black-400 text-sm sm:text-base leading-relaxed">
+          <p className="text-carbon-black-400 text-sm sm:text-base leading-relaxed max-w-md">
             Transforming the way you explore the world with innovative digital
             solutions since 2025. We help you discover global insights
             efficiently.
@@ -88,17 +89,12 @@ function Footer() {
         </div>
 
         {/* Quicklinks */}
-        <div className="md:row-start-2 lg:row-start-1 lg:col-span-2 lg:col-start-6 ">
+        <div className="md:row-start-2 lg:row-start-1 lg:col-span-2 lg:col-start-7">
           <FooterLinkGroup title="Quick Links" links={QuickLinks} />
         </div>
 
-        {/* Explorer */}
-        <div className="md:row-start-2 lg:row-start-1 lg:col-span-2 lg:col-start-8">
-          <FooterLinkGroup title="Explorer" links={exploreLinks} />
-        </div>
-
         {/* Contact Us Section */}
-        <div className="md:row-start-2 lg:row-start-1 lg:col-span-3 lg:col-start-10 flex flex-col gap-6">
+        <div className="md:row-start-2 lg:row-start-1 lg:col-span-4 lg:col-start-9 flex flex-col gap-6">
           <h3 className="font-bold text-bright-snow-100 text-lg tracking-tight">
             Contact Us
           </h3>
