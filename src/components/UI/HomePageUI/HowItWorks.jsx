@@ -1,12 +1,12 @@
 import React from "react";
 import { steps } from "../../../data/HowItWorks";
-import Heading from "./Heading";
+import Heading from "../../Heading";
 
 const HowItWorks = () => {
   return (
     <section id="how-it-works">
-      <div className="max-w-6xl 3xl:max-w-[1400px] mx-auto px-6 flex flex-col gap-7 md:gap-28">
-        <Heading title="How to Get Information" subtitle="From WorldAtlas" />
+      <div className="max-w-6xl 3xl:max-w-[1400px] mx-auto px-6 flex flex-col gap-5">
+        <Heading title="How to Get Information" />
         <div className="flex flex-col gap-20">
           {steps.map((step, index) => {
             const isEven = index % 2 === 0;

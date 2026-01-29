@@ -8,7 +8,7 @@ import {
 function Home() {
   return (
     <div>
-      <div className="flex flex-col gap-40">
+      <div className="flex flex-col gap-20 md:gap-40">
         <HeroSection />
         <HowItWorks />
         <Monuments />

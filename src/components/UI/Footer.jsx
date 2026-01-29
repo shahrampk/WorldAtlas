@@ -38,7 +38,7 @@ function Footer() {
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
     { name: "Countries", path: "/country" },
-    { name: "Continents", path: "/continent" },
+    { name: "Region", path: "/region" },
     { name: "World Facts", path: "/worldfacts" },
   ];
 

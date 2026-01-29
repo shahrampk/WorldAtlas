@@ -111,7 +111,7 @@ const Continent = () => {
     <div>
       <ContinentHero />
 
-      <div className="max-w-6xl mx-auto px-6 py-12 md:py-20 space-y-24">
+      <div className="max-w-6xl mx-auto px-6 py-12 md:py-20 flex flex-col gap-20 md:gap-40">
         {/* 3. Section Heading + 4. Table for static data */}
         <section>
           <Heading title="Global Status" />
