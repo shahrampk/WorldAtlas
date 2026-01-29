@@ -24,7 +24,7 @@ const router = createBrowserRouter(
       <Route index element={<Home />} />
       <Route path="about" element={<About />} />
       <Route path="country" element={<Countries />} />
-      <Route path="continent" element={<Continent />} />
+      <Route path="region" element={<Continent />} />
       <Route path="worldfacts" element={<WorldFacts />} />
       <Route path="*" element={<ErrorPage />} />
     </Route>,

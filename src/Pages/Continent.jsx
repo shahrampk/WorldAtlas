@@ -3,12 +3,13 @@ import { Link } from "react-router";
 import { getCountries } from "../api/api";
 import {
   ContinentHero,
-  ContentBlock,
   StatTable,
   ContinentDetail,
   FunFact,
 } from "../components/UI/ContinentPageUI/continentPageUI";
 import { continentExtremes } from "../data/ContinentData";
+import Map from "../components/UI/Map";
+import Heading from "../components/Heading";
 
 const Continent = () => {
   const [loading, setLoading] = useState(true);
@@ -65,7 +66,6 @@ const Continent = () => {
         }, {});
         setStats(statArray);
         setContinentData(detailObj);
-        setError(null);
       } catch (err) {
         setError("Failed to fetch world data. Please try again later.");
       } finally {
@@ -114,52 +114,33 @@ const Continent = () => {
       <div className="max-w-6xl mx-auto px-6 py-12 md:py-20 space-y-24">
         {/* 3. Section Heading + 4. Table for static data */}
         <section>
-          <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-bright-snow-50 uppercase tracking-widest">
-              Global Statistics
-            </h2>
-            <div className="h-1 w-20 bg-azure-blue-500 mx-auto mt-4 rounded-full"></div>
-          </div>
-          <ContentBlock className="mb-0!">
+          <Heading title="Global Status" />
+          <div className="text-bright-snow-200 3xl:text-lg leading-relaxed tracking-wide space-y-6">
             <p className="text-center text-bright-snow-300 max-w-2xl mx-auto mb-10">
               Live data from around the globe. These statistics are aggregated
               from 250+ countries and territories across seven major regions.
             </p>
             <StatTable data={stats} />
-          </ContentBlock>
+          </div>
         </section>
 
         {/* 5. Interactive Map */}
-        <ContentBlock title="Interactive Map">
-          <div className="w-full aspect-video md:aspect-21/9 bg-carbon-black-900 rounded-3xl border-2 border-dashed border-carbon-black-700 flex flex-col items-center justify-center gap-4 text-center p-8 group hover:border-azure-blue-500/50 transition-colors">
-            <div className="w-20 h-20 rounded-full bg-azure-blue-500/10 flex items-center justify-center text-azure-blue-500 text-4xl animate-pulse group-hover:bg-azure-blue-500/20">
-              🗺️
-            </div>
-            <div>
-              <h3 className="text-xl font-bold text-bright-snow-100 mb-2">
-                Continent Explorer Map
-              </h3>
-              <p className="text-bright-snow-400 max-w-md">
-                A visual tool for exploring the world. Select a continent on the
-                map to highlight its regions and discover its unique heritage.
-              </p>
-            </div>
+        <section>
+          <Heading title="Intrative Map" />
+          <div className="w-full bg-carbon-black-900 rounded-3xl border-2 border-dashed border-carbon-black-700 p-8  hover:border-azure-blue-500/50 transition-colors">
+            <Map />
           </div>
-        </ContentBlock>
+        </section>
 
         {/* 6. Tabs/Sidebar + Content Area */}
         <section>
-          <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-bright-snow-50 uppercase tracking-widest">
-              Detailed Exploration
-            </h2>
-            <div className="h-1 w-20 bg-azure-blue-500 mx-auto mt-4 rounded-full"></div>
-          </div>
+          <Heading title="Detailed Exploration" />
           <ContinentDetail continentData={continentData} />
         </section>
 
         {/* Extra: Fun Facts & Navigation */}
-        <ContentBlock title="🌟 Global Trivia">
+        <section>
+          <Heading title="🌟 Global Trivia" />
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <FunFact
               icon="❄️"
@@ -177,7 +158,7 @@ const Continent = () => {
               fact="Shares borders with Europe and Africa; home to the highest and lowest points on Earth."
             />
           </div>
-        </ContentBlock>
+        </section>
       </div>
     </div>
   );

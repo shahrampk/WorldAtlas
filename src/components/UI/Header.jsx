@@ -17,7 +17,7 @@ const Header = () => {
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "Countries", path: "/country" },
-    { name: "Continents", path: "/continent" },
+    { name: "Region", path: "/region" },
     { name: "World Facts", path: "/worldfacts" },
     { name: "About", path: "/about" },
   ];
