@@ -7,7 +7,7 @@ const api = axios.create({
 export const getCountries = async () => {
   try {
     const response = await api.get(
-      "/all?fields=name,population,area,continents,flags,languages,cca3,capital,region,subregion,coatOfArms",
+      "/all?fields=name,population,area,continents,flags,languages,capital,region,subregion",
     );
     return response.data;
   } catch (error) {

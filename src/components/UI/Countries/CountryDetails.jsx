@@ -1,5 +1,5 @@
 import React from "react";
-import { cleanWikiHtml } from "../../api/getArticle";
+import { cleanWikiHtml } from "../../../api/getArticle";
 
 const CountryDetails = ({ country, wikiContent, wikiIntro }) => {
   if (!country) return null;
@@ -15,7 +15,7 @@ const CountryDetails = ({ country, wikiContent, wikiIntro }) => {
       {/* 2. Three Column Layout: Intro | Flag | Emblem */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
         {/* Intro Column */}
-        <div className="lg:col-span-7 space-y-6">
+        <div className="lg:col-span-8 space-y-6">
           <div className="flex items-center gap-4 mb-2">
             <span className="h-px flex-1 bg-azure-blue-500/30"></span>
             <h3 className="text-lg font-bold text-azure-blue-400 uppercase tracking-[0.2em] whitespace-nowrap">
@@ -24,9 +24,9 @@ const CountryDetails = ({ country, wikiContent, wikiIntro }) => {
             <span className="h-px flex-1 bg-azure-blue-500/30"></span>
           </div>
 
-          <div className="text-bright-snow-200 leading-relaxed text-lg font-light">
-            <p className="border-l-4 border-azure-blue-600 pl-6 py-2">
-              {wikiIntro ||
+          <div className="text-bright-snow-200 leading-relaxed text-lg">
+            <p className="border-l-4 border-azure-blue-600 pl-6 py-2 leading-[1.8] tracking-wider">
+              {cleanWikiHtml(wikiIntro, 2) ||
                 `Learn about the geography, culture, and history of ${country.name.common}.`}
             </p>
           </div>
@@ -69,8 +69,8 @@ const CountryDetails = ({ country, wikiContent, wikiIntro }) => {
         </div>
 
         {/* Flag Column */}
-        <div className="lg:col-span-3">
-          <div className="group relative overflow-hidden rounded-2xl border-2 border-carbon-black-800 bg-carbon-black-900 aspect-4/3 flex items-center justify-center p-2 shadow-2xl">
+        <div className="lg:col-span-4">
+          <div className="group relative overflow-hidden rounded-2xl aspect-4/3 flex items-center justify-center p-2 shadow-2xl">
             <img
               src={country.flags.svg}
               alt={`${country.name.common} flag`}
@@ -84,24 +84,6 @@ const CountryDetails = ({ country, wikiContent, wikiIntro }) => {
           </div>
           <p className="mt-4 text-center text-[10px] text-carbon-black-400 font-bold uppercase tracking-[0.3em]">
             Flag
-          </p>
-        </div>
-
-        {/* Emblem Column */}
-        <div className="lg:col-span-2">
-          <div className="rounded-2xl border border-carbon-black-800 bg-carbon-black-900/40 p-6 flex flex-col items-center justify-center min-h-[160px] hover:border-azure-blue-500/30 transition-colors">
-            {country.coatOfArms?.svg ? (
-              <img
-                src={country.coatOfArms.svg}
-                alt="Coat of Arms"
-                className="w-24 h-24 object-contain filter drop-shadow-[0_0_15px_rgba(11,100,244,0.2)]"
-              />
-            ) : (
-              <div className="text-carbon-black-700 text-4xl">🏛️</div>
-            )}
-          </div>
-          <p className="mt-4 text-center text-[10px] text-carbon-black-400 font-bold uppercase tracking-[0.3em]">
-            State Emblem
           </p>
         </div>
       </div>

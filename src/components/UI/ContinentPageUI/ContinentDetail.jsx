@@ -1,15 +1,26 @@
 import { Map } from "lucide-react";
-import { useEffect, useState } from "react";
-import Loader from "../../Loader";
-import Error from "../../Error";
-
-const ContinentDetail = ({ continentData, states }) => {
-  const [activeContinent, setActiveContinent] = useState(
-    Object.keys(continentData)[0] || "Asia",
-  );
+import { useEffect, useState, useMemo } from "react";
+import { Link } from "react-router-dom";
+const ContinentDetail = ({
+  selectedContinent,
+  setSelectedContinent,
+  continentData,
+  selectedCountry,
+}) => {
   const [countriesShowed, setCountriesShowed] = useState(15);
   const [showMore, setShowMore] = useState(false);
-  const data = continentData[activeContinent];
+  let data = continentData[selectedContinent];
+  console.log(selectedCountry);
+  const orderedCountries = useMemo(() => {
+    if (!data?.countries) return [];
+    if (!selectedCountry || !data.countries.includes(selectedCountry))
+      return data.countries;
+
+    const filtered = data.countries.filter(
+      (country) => country !== selectedCountry,
+    );
+    return [selectedCountry, ...filtered];
+  }, [data, selectedCountry]);
 
   if (!data) return null;
 
@@ -22,7 +33,7 @@ const ContinentDetail = ({ continentData, states }) => {
       setShowMore(false);
       setCountriesShowed(15);
     }
-  }, [activeContinent]);
+  }, [selectedContinent]);
 
   return (
     <div className="flex flex-col md:flex-row gap-8 min-h-[500px] bg-carbon-black-900/30 rounded-3xl border border-carbon-black-800 p-6 md:p-8">
@@ -31,9 +42,9 @@ const ContinentDetail = ({ continentData, states }) => {
         {Object.keys(continentData).map((name) => (
           <button
             key={name}
-            onClick={() => setActiveContinent(name)}
+            onClick={() => setSelectedContinent(name)}
             className={`px-6 py-3 rounded-xl cursor-pointer font-semibold transition-all text-left whitespace-nowrap md:whitespace-normal border ${
-              activeContinent === name
+              selectedContinent === name
                 ? "bg-azure-blue-600 border-azure-blue-500 text-bright-snow-50 shadow-lg shadow-azure-blue-900/20"
                 : "bg-carbon-black-800/50 border-carbon-black-700 text-bright-snow-300 hover:bg-carbon-black-700 hover:text-bright-snow-100"
             }`}
@@ -47,7 +58,7 @@ const ContinentDetail = ({ continentData, states }) => {
       <div className="flex-1 space-y-8">
         <div>
           <h3 className="text-3xl md:text-4xl font-bold text-bright-snow-50 mb-4 flex items-center gap-3">
-            <Map size={35} strokeWidth={1.5} /> {activeContinent}
+            <Map size={35} strokeWidth={1.5} /> {selectedContinent}
           </h3>
           <p className="text-bright-snow-200 text-lg leading-relaxed italic">
             {data.overview}
@@ -84,21 +95,26 @@ const ContinentDetail = ({ continentData, states }) => {
                   Countries in this Continent
                 </span>
                 <div className="flex flex-wrap gap-2">
-                  {data.countries.slice(0, countriesShowed).map((country) => (
-                    <button
+                  {orderedCountries.slice(0, countriesShowed).map((country) => (
+                    <span
+                      title="see details on Continent page"
                       key={country}
-                      className="px-3 py-1 rounded-full bg-carbon-black-800 text-bright-snow-300 text-sm border border-carbon-black-700 hover:bg-blue-800 hover:text-bright-snow-50 cursor-pointer transition-colors duration-200"
+                      className={`px-3 py-1 rounded-full transition-colors duration-200 text-sm border ${
+                        selectedCountry === country
+                          ? "bg-azure-blue-600 border-azure-blue-500 text-bright-snow-50"
+                          : "bg-carbon-black-800 text-bright-snow-300 border-carbon-black-700 hover:bg-azure-blue-500 hover:text-bright-snow-50"
+                      }`}
                     >
                       {country}
-                    </button>
+                    </span>
                   ))}
-                  {data.countries.length > 15 && (
+                  {orderedCountries.length > 15 && (
                     <button
                       onClick={() => setShowMore((prev) => !prev)}
                       className="text-azure-blue-400 text-sm font-medium self-center cursor-pointer "
                     >
                       {!showMore
-                        ? `+ ${data.countries.length - countriesShowed} more`
+                        ? `+ ${orderedCountries.length - countriesShowed} more`
                         : "- show less"}
                     </button>
                   )}
@@ -106,7 +122,7 @@ const ContinentDetail = ({ continentData, states }) => {
               </div>
               <div className="p-4 bg-azure-blue-500/5 rounded-xl border border-azure-blue-500/10 italic text-azure-blue-300">
                 Total population: {data.population.toLocaleString()} across{" "}
-                {data.countries.length} countries.
+                {orderedCountries.length} countries.
               </div>
             </div>
           </div>

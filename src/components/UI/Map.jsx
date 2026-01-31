@@ -1,11 +1,10 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect } from "react";
 import * as d3 from "d3";
 import { mapData } from "../../data/mapData";
 
-const Map = ({ onCountrySelect }) => {
+const Map = ({ setSelectedContinent, setSelectedCountry }) => {
   const svgRef = useRef();
   const containerRef = useRef();
-  const [selectedCountry, setSelectedCountry] = useState(null);
 
   // Continent → color mapping
   const continentColors = {
@@ -16,25 +15,6 @@ const Map = ({ onCountrySelect }) => {
     "South America": "#a855f7",
     Oceania: "#14b8a6",
     Antarctica: "#64748b",
-  };
-
-  // number formatter
-  const formatNumber = (num, type) => {
-    if (!num) return "-";
-
-    if (type === "population") {
-      if (num >= 1_000_000) return (num / 1_000_000).toFixed(1) + " Million";
-      if (num >= 1_000) return (num / 1_000).toFixed(1) + "K";
-      return num;
-    }
-
-    if (type === "gdp") {
-      if (num >= 1_000_000) return (num / 1_000_000).toFixed(2) + " Trillion";
-      if (num >= 1_000) return (num / 1_000).toFixed(1) + " Billion";
-      return num + " Million";
-    }
-
-    return num;
   };
 
   useEffect(() => {
@@ -62,10 +42,11 @@ const Map = ({ onCountrySelect }) => {
           return continentColors[continent] || "#1e293b";
         })
         .attr("stroke", "#020e22")
+        .attr("title", (d) => d.properties.name)
         .attr("stroke-width", 0.5)
         .on("mouseenter", function () {
           d3.select(this)
-            .attr("stroke", "#3c83f6")
+            .attr("stroke", "#fff")
             .attr("stroke-width", 1.5)
             .raise(); // Bring to front
         })
@@ -73,18 +54,19 @@ const Map = ({ onCountrySelect }) => {
           d3.select(this).attr("stroke", "#020e22").attr("stroke-width", 0.5);
         })
         .on("click", (_, d) => {
-          setSelectedCountry(d.properties);
           // Also notify parent if needed
-          if (onCountrySelect) {
-            onCountrySelect(d.properties);
-          }
+
+          setSelectedContinent &&
+            setSelectedContinent((prev) => (prev = d.properties.continent));
+          setSelectedCountry &&
+            setSelectedCountry((prev) => (prev = d.properties.name));
         });
     };
 
     drawMap();
     window.addEventListener("resize", drawMap);
     return () => window.removeEventListener("resize", drawMap);
-  }, [onCountrySelect]); // Added onCountrySelect to deps
+  }, [setSelectedContinent, setSelectedCountry]); // Added onCountrySelect to deps
 
   return (
     <div ref={containerRef} className="w-full max-w-5xl mx-auto relative group">

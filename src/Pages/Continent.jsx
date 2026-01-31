@@ -1,17 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router";
 import { getCountries } from "../api/api";
 import {
   ContinentHero,
   StatTable,
-  ContinentDetail,
   FunFact,
+  CountinentData,
 } from "../components/UI/ContinentPageUI/continentPageUI";
 import { continentExtremes } from "../data/ContinentData";
-import Map from "../components/UI/Map";
 import Heading from "../components/Heading";
-import Loader from "../components/Loader";
-import Error from "../components/Error";
 
 const Continent = () => {
   const [loading, setLoading] = useState(true);
@@ -93,29 +89,11 @@ const Continent = () => {
             <StatTable data={stats} states={{ loading, error }} />
           </div>
         </section>
-
-        {/* 5. Interactive Map */}
-        <section>
-          <Heading title="Intrative Map" />
-          <div className="w-full bg-carbon-black-900 rounded-3xl border-2 border-dashed border-carbon-black-700 p-8  hover:border-azure-blue-500/50 transition-colors">
-            <Map />
-          </div>
-        </section>
-
-        {/* 6. Tabs/Sidebar + Content Area */}
-        <section id="regions-details">
-          <Heading title="Detailed Exploration" />
-          {loading ? (
-            <Loader />
-          ) : error ? (
-            <Error />
-          ) : (
-            <ContinentDetail
-              continentData={continentData}
-              states={{ loading, error }}
-            />
-          )}
-        </section>
+        {/* World Map + Contient Details */}
+        <CountinentData
+          continentData={continentData}
+          states={{ loading, error }}
+        />
 
         {/* Extra: Fun Facts & Navigation */}
         <section>
