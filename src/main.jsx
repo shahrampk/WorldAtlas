@@ -9,14 +9,7 @@ import {
 } from "react-router-dom";
 
 import App from "./App.jsx";
-import {
-  About,
-  Continent,
-  Countries,
-  ErrorPage,
-  Home,
-  WorldFacts,
-} from "./Pages";
+import { About, Continent, Countries, ErrorPage, Home } from "./Pages";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -25,7 +18,6 @@ const router = createBrowserRouter(
       <Route path="about" element={<About />} />
       <Route path="country" element={<Countries />} />
       <Route path="region" element={<Continent />} />
-      <Route path="worldfacts" element={<WorldFacts />} />
       <Route path="*" element={<ErrorPage />} />
     </Route>,
   ),

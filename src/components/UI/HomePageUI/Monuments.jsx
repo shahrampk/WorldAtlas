@@ -1,6 +1,4 @@
-import React, { useState } from "react";
-import Slider from "../../Slider";
-import Heading from "../../Heading";
+import { Slider, Heading } from "../../Component";
 function Monuments() {
   return (
     <section id="monuments" className="flex flex-col gap-5 ">

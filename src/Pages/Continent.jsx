@@ -45,7 +45,6 @@ const Continent = () => {
             density: c.area > 0 ? c.population / c.area : 0,
           }))
           .sort((a, b) => b.population - a.population);
-        console.log(statArray);
         // Format for ContinentDetail
         const detailObj = Object.values(aggregated).reduce((acc, c) => {
           acc[c.name] = {
@@ -63,8 +62,9 @@ const Continent = () => {
         }, {});
         setStats(statArray);
         setContinentData(detailObj);
-      } catch (err) {
+      } catch (error) {
         setError("Failed to fetch world data. Please try again later.");
+        console.error(error);
       } finally {
         setLoading(false);
       }

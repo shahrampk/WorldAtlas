@@ -54,10 +54,10 @@ const HeroSection = () => {
             Explore Countries
           </Link>
           <Link
-            to="/worldfacts"
+            to="/about"
             className="px-5 py-2.5 rounded-xl bg-carbon-black-900/60 hover:bg-carbon-black-800/80 border border-carbon-black-400 backdrop-blur-sm text-carbon-black-50 font-medium md:text-lg transition-all hover:border-white active:scale-95 cursor-pointer"
           >
-            World Facts
+            About
           </Link>
         </div>
       </div>

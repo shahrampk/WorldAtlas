@@ -11,44 +11,13 @@ import {
   Linkedin,
 } from "lucide-react";
 
-function FooterLinkGroup({ title, links }) {
-  return (
-    <div className="flex flex-col gap-6">
-      <h3 className="font-bold text-bright-snow-100 text-lg tracking-tight">
-        {title}
-      </h3>
-      <ul className="flex flex-col gap-3.5 text-carbon-black-300">
-        {links.map((link) => (
-          <li key={link.name}>
-            <Link
-              to={link.path}
-              className="transition-colors duration-200 hover:text-azure-blue-400 text-sm md:text-base"
-            >
-              {link.name}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}
-
 function Footer() {
   const QuickLinks = [
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
     { name: "Countries", path: "/country" },
     { name: "Region", path: "/region" },
-    { name: "World Facts", path: "/worldfacts" },
   ];
-
-  const exploreLinks = [
-    { name: "How It Works", path: "/#how-it-works" },
-    { name: "Regions", path: "/region#regions-details" },
-    { name: "Monuments", path: "/#monuments" },
-    { name: "FAQs", path: "/#faqs-section" },
-  ];
-
   return (
     <footer className="bg-carbon-black-950 border-t border-carbon-black-800/50 pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-12 md:gap-8 mb-20">
@@ -68,19 +37,17 @@ function Footer() {
               <Facebook size={20} />
             </a>
             <a
-              href="#"
-              className="p-2 text-carbon-black-400 hover:text-azure-blue-400 hover:bg-bright-snow-100/5 hover:-translate-y-1 rounded-full transition-all"
-            >
-              <Twitter size={20} />
-            </a>
-            <a
-              href="#"
+              target="_blank"
+              href="www.linkedin.com/in/shahrampk
+
+"
               className="p-2 text-carbon-black-400 hover:text-azure-blue-400 hover:bg-bright-snow-100/5 hover:-translate-y-1 rounded-full transition-all"
             >
               <Linkedin size={20} />
             </a>
             <a
-              href="#"
+              target="_blank"
+              href="https://www.instagram.com/mshahram574/"
               className="p-2 text-carbon-black-400 hover:text-azure-blue-400 hover:bg-bright-snow-100/5 hover:-translate-y-1 rounded-full transition-all"
             >
               <Instagram size={20} />
@@ -90,7 +57,23 @@ function Footer() {
 
         {/* Quicklinks */}
         <div className="md:row-start-2 lg:row-start-1 lg:col-span-2 lg:col-start-7">
-          <FooterLinkGroup title="Quick Links" links={QuickLinks} />
+          <div className="flex flex-col gap-6">
+            <h3 className="font-bold text-bright-snow-100 text-lg tracking-tight">
+              Quick Links
+            </h3>
+            <ul className="flex flex-col gap-3.5 text-carbon-black-300">
+              {QuickLinks.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    to={link.path}
+                    className="transition-colors duration-200 hover:text-azure-blue-400 text-sm md:text-base"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
         {/* Contact Us Section */}
@@ -102,7 +85,7 @@ function Footer() {
             <li className="flex gap-4 items-start text-carbon-black-300">
               <MapPin className="text-azure-blue-400 shrink-0 mt-1" size={18} />
               <span className="text-sm md:text-base">
-                123 World Avenue, Globe Center
+                Gujrat , Punjab , Pakistan
               </span>
             </li>
             <li className="flex gap-4 items-center text-carbon-black-300">
@@ -111,12 +94,12 @@ function Footer() {
                 href="mailto:info@worldatlas.com"
                 className="text-sm md:text-base hover:text-azure-blue-400 transition-colors"
               >
-                info@worldatlas.com
+                mshahram574@gmail.com
               </a>
             </li>
             <li className="flex gap-4 items-center text-carbon-black-300">
               <Phone className="text-azure-blue-400 shrink-0" size={18} />
-              <span className="text-sm md:text-base">+1 (212) 555-1234</span>
+              <span className="text-sm md:text-base">0301-2345678</span>
             </li>
           </ul>
         </div>

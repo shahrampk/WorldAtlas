@@ -1,15 +1,13 @@
 import React from "react";
-import Loader from "../../Loader";
-import Error from "../../Error";
+import { Loader, Error } from "../../Component";
 
 const StatTable = ({ data, states }) => {
-  console.log(states);
   if (!data || data.length === 0) return null;
 
   return (
     <div className="overflow-x-auto rounded-xl border border-carbon-black-800 bg-carbon-black-900/50">
       <table className="w-full text-left border-collapse">
-        <thead>
+        <thead className="hidden md:table-header-group">
           <tr className="border-b border-carbon-black-800 bg-carbon-black-800/50">
             <th className="px-6 py-4 font-semibold text-bright-snow-100 whitespace-nowrap">
               Rank
@@ -37,19 +35,36 @@ const StatTable = ({ data, states }) => {
             data.map((c, i) => (
               <tr
                 key={c.name}
-                className="hover:bg-carbon-black-800/30 transition-colors"
+                className="block md:table-row hover:bg-carbon-black-800/30 transition-colors"
               >
-                <td className="px-6 py-4 text-bright-snow-300">{i + 1}</td>
-                <td className="px-6 py-4 font-medium text-azure-blue-400">
+                <td className="px-6 py-4 text-bright-snow-300 block md:table-cell">
+                  <span className="md:hidden font-semibold border-b border-carbon-black-800 pb-2 mb-2 block text-azure-blue-400">
+                    Rank {i + 1}
+                  </span>
+                  <span className="hidden md:inline">{i + 1}</span>
+                </td>
+                <td className="px-6 py-4 font-medium text-azure-blue-400 flex justify-between items-center md:table-cell">
+                  <span className="md:hidden text-bright-snow-100">
+                    Continent
+                  </span>
                   {c.name}
                 </td>
-                <td className="px-6 py-4 text-bright-snow-300 text-right">
+                <td className="px-6 py-4 text-bright-snow-300 flex justify-between items-center md:table-cell md:text-right">
+                  <span className="md:hidden text-bright-snow-100">
+                    Area (km²)
+                  </span>
                   {c.area.toLocaleString()}
                 </td>
-                <td className="px-6 py-4 text-bright-snow-300 text-right">
+                <td className="px-6 py-4 text-bright-snow-300 flex justify-between items-center md:table-cell md:text-right">
+                  <span className="md:hidden text-bright-snow-100">
+                    Population
+                  </span>
                   {c.population.toLocaleString()}
                 </td>
-                <td className="px-6 py-4 text-bright-snow-300 text-right">
+                <td className="px-6 py-4 text-bright-snow-300 flex justify-between items-center md:table-cell md:text-right">
+                  <span className="md:hidden text-bright-snow-100">
+                    Density
+                  </span>
                   {c.density.toFixed(1)}
                 </td>
               </tr>

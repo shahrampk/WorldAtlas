@@ -1,21 +1,17 @@
 import React, { useState } from "react";
 import ContinentDetail from "./ContinentDetail";
-import Map from "../../UI/Map";
-import Heading from "../../Heading";
-import Loader from "../../Loader";
-import Error from "../../Error";
-
+import { Heading, Loader, Error } from "../../Component";
+import Map from "../Map";
 function CountinentData({ continentData, states }) {
   const [selectedContinent, setSelectedContinent] = useState(
     Object.keys(continentData)[0] || "Asia",
   );
   const [selectedCountry, setSelectedCountry] = useState("");
-  console.log(selectedContinent);
   return (
     <section className="flex flex-col gap-10">
       <Heading title="Continent Details" />
       <div>
-        <div className="max-w-4xl mx-auto bg-carbon-black-900 rounded-3xl border-2 border-dashed border-carbon-black-700 p-8  hover:border-azure-blue-500/50 transition-colors">
+        <div className="max-w-4xl mx-auto bg-carbon-black-900 rounded-3xl border-2 border-dashed border-carbon-black-700 p-4 md:p-8  hover:border-azure-blue-500/50 transition-colors">
           <Map
             setSelectedContinent={setSelectedContinent}
             setSelectedCountry={setSelectedCountry}
@@ -35,6 +31,7 @@ function CountinentData({ continentData, states }) {
             setSelectedContinent={setSelectedContinent}
             continentData={continentData}
             selectedCountry={selectedCountry}
+            setSelectedCountry={setSelectedCountry}
           />
         )}
       </div>

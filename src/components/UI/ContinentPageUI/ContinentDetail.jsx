@@ -1,16 +1,14 @@
 import { Map } from "lucide-react";
 import { useEffect, useState, useMemo } from "react";
-import { Link } from "react-router-dom";
 const ContinentDetail = ({
   selectedContinent,
   setSelectedContinent,
   continentData,
   selectedCountry,
+  setSelectedCountry,
 }) => {
-  const [countriesShowed, setCountriesShowed] = useState(15);
   const [showMore, setShowMore] = useState(false);
   let data = continentData[selectedContinent];
-  console.log(selectedCountry);
   const orderedCountries = useMemo(() => {
     if (!data?.countries) return [];
     if (!selectedCountry || !data.countries.includes(selectedCountry))
@@ -22,18 +20,10 @@ const ContinentDetail = ({
     return [selectedCountry, ...filtered];
   }, [data, selectedCountry]);
 
-  if (!data) return null;
-
   useEffect(() => {
-    if (showMore) setCountriesShowed(data.countries.length);
-    else setCountriesShowed(15);
-  }, [showMore]);
-  useEffect(() => {
-    if (showMore) {
-      setShowMore(false);
-      setCountriesShowed(15);
-    }
+    setShowMore(false);
   }, [selectedContinent]);
+  if (!data) return null;
 
   return (
     <div className="flex flex-col md:flex-row gap-8 min-h-[500px] bg-carbon-black-900/30 rounded-3xl border border-carbon-black-800 p-6 md:p-8">
@@ -95,26 +85,31 @@ const ContinentDetail = ({
                   Countries in this Continent
                 </span>
                 <div className="flex flex-wrap gap-2">
-                  {orderedCountries.slice(0, countriesShowed).map((country) => (
-                    <span
-                      title="see details on Continent page"
-                      key={country}
-                      className={`px-3 py-1 rounded-full transition-colors duration-200 text-sm border ${
-                        selectedCountry === country
-                          ? "bg-azure-blue-600 border-azure-blue-500 text-bright-snow-50"
-                          : "bg-carbon-black-800 text-bright-snow-300 border-carbon-black-700 hover:bg-azure-blue-500 hover:text-bright-snow-50"
-                      }`}
-                    >
-                      {country}
-                    </span>
-                  ))}
+                  {orderedCountries
+                    .slice(0, showMore ? orderedCountries.length : 15)
+                    .map((country) => (
+                      <button
+                        onClick={() =>
+                          setSelectedCountry && setSelectedCountry(country)
+                        }
+                        title={`Select ${country}`}
+                        key={country}
+                        className={`px-3 py-1 rounded-full transition-colors duration-200 text-sm border cursor-pointer ${
+                          selectedCountry === country
+                            ? "bg-azure-blue-600 border-azure-blue-500 text-bright-snow-50"
+                            : "bg-carbon-black-800 text-bright-snow-300 border-carbon-black-700 hover:bg-azure-blue-500 hover:text-bright-snow-50"
+                        }`}
+                      >
+                        {country}
+                      </button>
+                    ))}
                   {orderedCountries.length > 15 && (
                     <button
                       onClick={() => setShowMore((prev) => !prev)}
-                      className="text-azure-blue-400 text-sm font-medium self-center cursor-pointer "
+                      className="text-azure-blue-400 text-sm font-medium self-center cursor-pointer hover:text-azure-blue-300 transition-colors"
                     >
                       {!showMore
-                        ? `+ ${orderedCountries.length - countriesShowed} more`
+                        ? `+ ${orderedCountries.length - 15} more`
                         : "- show less"}
                     </button>
                   )}

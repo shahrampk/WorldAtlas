@@ -80,7 +80,6 @@ function About() {
           <ul className="list-inside list-disc pl-4">
             <li>Continents</li>
             <li>Countries</li>
-            <li>World Facts</li>
           </ul>
           <p>
             It highlights the values of clarity, structure, and curation that
@@ -153,33 +152,6 @@ function About() {
           </p>
         </ContentBlock>
 
-        <ContentBlock title="World Facts: Discovering Global Records and Extremes">
-          <p>
-            For users fascinated by records and remarkable phenomena, the
-            <Highlight to="/worldfacts"> World Facts page</Highlight> compiles
-            extraordinary global information in one place.
-          </p>
-          <p>This section includes:</p>
-          <ul className="flex flex-col gap-2 list-decimal list-inside pl-4">
-            <li>
-              Global superlatives such as the largest and smallest countries
-            </li>
-            <li>Highest mountains and deepest oceans</li>
-            <li>Population rankings, languages, and religions</li>
-            <li>Deserts, climate extremes, and natural wonders</li>
-          </ul>
-          <p>
-            WorldAtlas also showcases man-made marvels, including modern wonders
-            and record-breaking buildings. Global trends such as population
-            growth and internet usage provide insight into how the world is
-            evolving.
-          </p>
-          <p>
-            Each fact connects back to related countries and continents,
-            reinforcing contextual learning.
-          </p>
-        </ContentBlock>
-
         <ContentBlock title="How Everything Connects">
           <p>WorldAtlas is designed as an interconnected learning system:</p>
           <ul className="list-disc list-inside space-y-3 pl-4 ">
@@ -191,10 +163,6 @@ function About() {
               <Highlight to="/continent">Continents</Highlight> and
               <Highlight to="/country"> Countries</Highlight> are linked for
               contextual understanding
-            </li>
-            <li>
-              <Highlight to="/worldfacts">World Facts</Highlight> support and
-              enrich geographic learning
             </li>
             <li>
               The <Highlight to="/about">About page</Highlight> explains purpose

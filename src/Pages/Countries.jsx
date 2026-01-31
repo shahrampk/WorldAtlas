@@ -18,7 +18,6 @@ function Countries() {
     loadingWiki,
     handleCountrySelect,
   } = useCountryIntelligence(detailsRef);
-  console.log(wikiData);
   // Filter countries for search display
   const filteredCountries = countries.filter((c) =>
     c.name.common.toLowerCase().includes(searchTerm.toLowerCase()),

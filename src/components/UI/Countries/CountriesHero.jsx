@@ -1,6 +1,5 @@
 import React from "react";
-import Heading from "../../Heading";
-
+import { Heading } from "../../Component";
 const CountriesHero = () => {
   return (
     <section className="pt-10 mb-12">
