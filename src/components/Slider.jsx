@@ -22,9 +22,9 @@ function Slider() {
       <div className="relative max-w-6xl mx-auto flex w-full overflow-hidden py-10 px-5 group">
         <button
           onClick={prevSlide}
-          className="absolute z-20 left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-carbon-black-900/40 hover:bg-azure-blue-600 backdrop-blur-md border border-white/10 rounded-full flex items-center justify-center cursor-pointer shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 opacity-0 group-hover:opacity-100"
+          className="absolute z-20 left-4 top-1/2 -translate-y-1/2 w-8 h-8 md:w-10 md:h-10 bg-carbon-black-900/40 hover:bg-azure-blue-600 backdrop-blur-md border border-white/10 rounded-full flex items-center justify-center cursor-pointer shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 md:opacity-0 group-hover:opacity-100"
         >
-          <ChevronLeft className="text-white w-6 h-6" />
+          <ChevronLeft className="text-white w-4 h-4 md:w-6 md:h-6" />
         </button>
         {slides.map((slide) => (
           <div
@@ -32,8 +32,8 @@ function Slider() {
             className="min-w-full transition-transform duration-700 ease-in-out px-4"
             style={{ transform: `translateX(-${currentSlide * 100}%)` }}
           >
-            <div className="flex flex-col md:flex-row items-center gap-10 rounded-3xl p-6 md:p-10 glass-card h-full">
-              <div className="w-full md:w-80 h-80 shrink-0 relative overflow-hidden rounded-2xl ">
+            <div className="flex flex-col md:flex-row items-center gap-4 md:gap-10 rounded-3xl p-4 md:p-10 glass-card h-full">
+              <div className="w-full md:w-80 h-50 md:h-80 shrink-0 relative overflow-hidden rounded-2xl ">
                 <img
                   src={slide.imageUrl}
                   alt={slide.name}
@@ -43,10 +43,10 @@ function Slider() {
               </div>
 
               <div className="flex-1">
-                <h3 className="text-3xl lg:text-4xl font-bold text-carbon-black-50 mb-6 leading-tight tracking-tight">
+                <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-carbon-black-50 mb-4 md:mb-6 leading-tight tracking-tight">
                   {slide.name}
                 </h3>
-                <p className="text-lg leading-relaxed text-carbon-black-300 mb-8 max-w-xl">
+                <p className="text-sm md:text-lg leading-relaxed tracking-wide text-carbon-black-300 mb-8 max-w-xl">
                   {slide.description}
                 </p>
               </div>
@@ -70,9 +70,9 @@ function Slider() {
 
         <button
           onClick={nextSlide}
-          className="absolute z-20 right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-carbon-black-900/40 hover:bg-azure-blue-600 backdrop-blur-md border border-white/10 rounded-full flex items-center justify-center cursor-pointer shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 opacity-0 group-hover:opacity-100"
+          className="absolute z-20 right-4 top-1/2 -translate-y-1/2 w-8 h-8 md:w-10 md:h-10 bg-carbon-black-900/40 hover:bg-azure-blue-600 backdrop-blur-md border border-white/10 rounded-full flex items-center justify-center cursor-pointer shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 md:opacity-0 group-hover:opacity-100"
         >
-          <ChevronRight className="text-white w-6 h-6" />
+          <ChevronRight className="text-white w-4 h-4 md:w-6 md:h-6" />
         </button>
       </div>
     </div>

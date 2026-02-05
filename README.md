@@ -1,16 +1,81 @@
-# React + Vite
+# WorldAtlas – Explore the World
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Discover the World, One Place at a Time**
 
-Currently, two official plugins are available:
+WorldAtlas is your go-to place to explore the world in a simple and interactive way. From countries and continents to interesting global facts, everything is organized clearly so you can learn quickly. Perfect for students, curious minds, and anyone who wants to understand the world better, WorldAtlas turns complex data into easy-to-read insights with maps, visuals, and fun facts.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![WorldAtlas Preview](PLACEHOLDER_FOR_PREVIEW_IMAGE_URL)
 
-## React Compiler
+<!-- Replace the link above with the actual preview image URL -->
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Key Features
 
-## Expanding the ESLint configuration
+- **Interactive Map**: Visual selector for exploring different continents.
+- **Comprehensive Country Details**: Access in-depth information about countries, including geography, government, economy, and culture.
+- **Comparative Statistics**: View rankings and comparisons of continents by area, population, and density.
+- **World Facts**: Discover global superlatives, human geography trends, and physical wonders.
+- **Responsive Design**: A seamless experience across desktop, tablet, and mobile devices.
+- **Modern UI/UX**: Built with a clean, Azure Blue and Carbon Black design system.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
+
+This project is built using the latest modern web technologies:
+
+- **Frontend Framework**: [React 19](https://react.dev/)
+- **Build Tool**: [Vite](https://vitejs.dev/)
+- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Data Visualization**: [D3.js](https://d3js.org/)
+- **HTTP Client**: [Axios](https://axios-http.com/)
+
+## 📂 Project Structure
+
+```
+WorldAtlas-v2/
+├── public/              # Static assets
+├── src/
+│   ├── assets/          # Project images and icons
+│   ├── components/      # Reusable React components
+│   ├── data/            # Static data files
+│   ├── Project-Details/ # Documentation and planning files
+│   ├── App.jsx          # Main application component
+│   └── main.jsx         # Application entry point
+├── .gitignore           # Git ignore rules
+├── index.html           # HTML entry point
+├── package.json         # Dependencies and scripts
+└── vite.config.js       # Vite configuration
+```
+
+## 📦 Installation & Setup
+
+Follow these steps to set up the project locally:
+
+1. **Clone the repository**
+
+   ```bash
+   git clone <repository_url>
+   cd WorldAtlas-v2
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   npm install
+   ```
+
+3. **Run the development server**
+
+   ```bash
+   npm run dev
+   ```
+
+4. **Open in your browser**
+   Visit `http://localhost:5173` to view the app.
+
+## 🤝 Contribution
+
+Contributions are welcome! If you have suggestions or improvements, feel free to open an issue or submit a pull request.
+
+---
+
+_Mapping Knowledge for the Curious Mind._

@@ -19,15 +19,6 @@ const HeroSection = () => {
       {/* Content Container */}
       <div className="relative z-20 container mx-auto px-6 text-center">
         {/* Badge / Pill */}
-        <div className="inline-flex items-center gap-2 px-3 py-1 mb-6 rounded-full bg-azure-blue-900/80 border border-azure-blue-500/30 backdrop-blur-md">
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-azure-blue-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-azure-blue-500"></span>
-          </span>
-          <span className="text-sm font-medium text-azure-blue-100 tracking-wide uppercase">
-            Explore the World
-          </span>
-        </div>
 
         {/* Main Title */}
         <h1 className="font-bold tracking-tight mb-6 text-carbon-black-50 drop-shadow-2xl">

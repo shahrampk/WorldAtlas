@@ -1,63 +1,62 @@
 export const faqs = [
   {
     questionNo: 1,
-    question:
-      "What is WorldAtlas and what kind of information does it provide?",
+    question: "What is WorldAtlas and what can I find here?",
     answer:
-      "WorldAtlas is an informational platform that helps users explore countries, continents, and global geographic facts. It brings together location-based data, key statistics, and world insights in an easy-to-understand format.",
+      "WorldAtlas is a comprehensive platform for exploring global geography, country statistics, and cultural insights. It provides detailed data on every recognized country and continent, from population figures to local time.",
   },
   {
     questionNo: 2,
-    question: "Who can benefit from using WorldAtlas?",
+    question: "How can I search for a specific country?",
     answer:
-      "WorldAtlas is useful for students, teachers, researchers, travelers, and anyone curious about the world. It is designed to support learning, exploration, and general knowledge needs.",
+      "You can use the search bar on the Countries page to find any nation by name. You can also filter results by continent to quickly narrow down your exploration to a specific region.",
   },
   {
     questionNo: 3,
-    question: "Does WorldAtlas include all countries of the world?",
+    question: "Where does the data on WorldAtlas come from?",
     answer:
-      "Yes, WorldAtlas covers all internationally recognized countries from every continent. Each country is placed within its correct geographic and continental context.",
+      "Our data is primarily sourced from reputable global databases like the RestCountries API, ensuring that demographics, area statistics, and regional information are accurate and reliable.",
   },
   {
     questionNo: 4,
-    question: "Can I explore information continent-wise on WorldAtlas?",
+    question: "Can I explore information continent-wise?",
     answer:
-      "Yes, the website allows users to explore continents individually along with their countries and key geographic facts. This structure makes it easier to understand regional patterns and global distribution.",
+      "Yes! Each continent has its own dedicated section where you can view aggregate statistics and a list of all countries within that region, making it easier to compare regional data.",
   },
   {
     questionNo: 5,
-    question: "How accurate is the information available on WorldAtlas?",
+    question: "Is WorldAtlas suitable for mobile devices?",
     answer:
-      "The information is collected from reliable geographic and global data sources. Content is reviewed carefully to ensure it remains accurate and trustworthy.",
+      "Absolutely. WorldAtlas is built with a fully responsive design, meaning it works seamlessly on smartphones, tablets, and desktops for a great experience on any device.",
   },
   {
     questionNo: 6,
-    question: "Is WorldAtlas suitable for academic and educational use?",
+    question: "Do I need to sign up or pay to use the site?",
     answer:
-      "Yes, WorldAtlas is designed with education in mind and can be used for school projects and research. The content is presented in a clear, factual, and easy-to-reference manner.",
+      "No registration is required. All our geographical data and tools are entirely free and accessible to everyone without any login or subscription.",
   },
   {
     questionNo: 7,
-    question: "Does WorldAtlas provide maps and visual geographic data?",
+    question: "What kind of statistics does WorldAtlas provide?",
     answer:
-      "Yes, WorldAtlas includes maps and visual representations to help users understand locations and boundaries. These visuals make learning geography more engaging and effective.",
+      "We offer a wide range of data, including total population, land area, capital cities, official languages, currencies, and time zones for every country in the world.",
   },
   {
     questionNo: 8,
-    question: "Do I need to register or create an account to use WorldAtlas?",
+    question: "How often is the population data updated?",
     answer:
-      "No registration is required to access WorldAtlas. All content is freely available without any login or subscription.",
+      "We periodically sync our data with global statistical sources to reflect the most recent changes in world population and country data.",
   },
   {
     questionNo: 9,
-    question: "How often is the data on WorldAtlas updated?",
+    question: "Can students use WorldAtlas for research projects?",
     answer:
-      "WorldAtlas updates its content periodically to reflect changes in global statistics. This ensures users always see relevant and current geographic information.",
+      "Yes, WorldAtlas is designed as an educational resource. It's perfect for students, teachers, and researchers looking for verified geographical facts and quick comparisons.",
   },
   {
     questionNo: 10,
-    question: "Can WorldAtlas be used on mobile devices?",
+    question: "Does the site include interactive maps?",
     answer:
-      "Yes, WorldAtlas is fully responsive and works smoothly on mobile phones, tablets, and desktops. Users can explore world information anytime, from any device.",
+      "Yes, we include interactive maps and visual data representations to help you visualize locations and boundaries, making the learning experience more engaging.",
   },
 ];
