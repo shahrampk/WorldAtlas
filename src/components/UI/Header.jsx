@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router";
-import Logo from "../logo";
+import Logo from "../Logo";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
